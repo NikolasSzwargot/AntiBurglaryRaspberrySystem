@@ -10,7 +10,6 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-
         // Duration of wait
         val splashDuration = 2000L // 2000 milliseconds or 2 seconds
 

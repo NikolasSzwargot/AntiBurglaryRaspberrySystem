@@ -10,38 +10,24 @@
         android:id="@+id/buttonOpen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/camera_surface_view"
-        app:layout_constraintStart_toEndOf="@+id/buttonClose"
+        app:layout_constraintEnd_toEndOf="@id/buttonRecordings"
+        app:layout_constraintTop_toBottomOf="@id/buttonRecordings"
         android:text="Open"
         android:backgroundTint="@color/white"
         android:layout_marginTop="35dp"
-        android:visibility="invisible"/>
+        android:textSize="25sp"/>
 
 
     <Button
         android:id="@+id/buttonClose"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/camera_surface_view"
-        app:layout_constraintEnd_toStartOf="@+id/buttonOpen"
+        app:layout_constraintStart_toStartOf="@id/buttonRecordings"
+        app:layout_constraintTop_toBottomOf="@id/buttonRecordings"
         android:text="Close"
         android:backgroundTint="@color/white"
         android:layout_marginTop="35dp"
-        android:visibility="invisible"/>
-
-    <SurfaceView
-        android:id="@+id/camera_surface_view"
-        android:layout_width="350dp"
-        android:layout_height="350dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/buttonClose"
-        android:layout_marginTop="100dp"
-        android:visibility="invisible"/>
-
+        android:textSize="25sp"/>
 
     <Button
         android:id="@+id/buttonRecordings"
@@ -54,5 +40,6 @@
         android:text="Recordings"
         android:backgroundTint="@color/white"
         android:textSize="30sp"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

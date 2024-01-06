@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 
-class RecordingsAdapter(private val items: List<MediaItem>, private val clickListener: (MediaItem) -> Unit) : RecyclerView.Adapter<RecordingsAdapter.ViewHolder>() {
+class RecordingsAdapter(private val items: MutableList<MediaItem>, private val clickListener: (MediaItem) -> Unit) : RecyclerView.Adapter<RecordingsAdapter.ViewHolder>() {
 
     // Provide a reference to the views for each data item
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -18,7 +18,7 @@ class RecordingsAdapter(private val items: List<MediaItem>, private val clickLis
         fun bind(item: MediaItem, clickListener: (MediaItem) -> Unit) {
             textView.text = item.date
             Picasso.get()
-                .load(R.drawable.doda)
+                .load(item.photo)
                 .into(photo)
             itemView.setOnClickListener { clickListener(item) }
         }
@@ -41,4 +41,10 @@ class RecordingsAdapter(private val items: List<MediaItem>, private val clickLis
 
     // Return the size of your dataset (invoked by the layout manager)
     override fun getItemCount() = items.size
+
+    fun updateRecordings(newItems: List<MediaItem>) {
+        items.clear() // Clear the old items
+        items.addAll(newItems) // Add the new items
+        notifyDataSetChanged() // Notify the adapter that the data set has changed
+    }
 }
